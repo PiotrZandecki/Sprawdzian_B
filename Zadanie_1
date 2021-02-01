@@ -1,0 +1,40 @@
+while True:
+
+	print('Wybierz figure: \n1. Trójkąt. \n2. Kwadrat')
+	print('Wybierz bryłę: \n3. Sześcian.\n4. Kula')
+	print('\n5. Zakończ program')
+	v = (1,2,3,4,5)
+	v = int(input('Wybierz opcje:'))
+
+	if v == 1:
+		print('Wybrałeś trójkąt!')
+		bok = input('Podaj dlugość boku w trójkącie rownoramiennym: ')
+		bok = float(bok)
+		podstawa = input('Podaj długość podstawy: ')
+		podstawa = float(podstawa)
+		print('Obwód tego trójkąta wynosi: ', podstawa + 2 * bok)
+		continue
+	if v == 2:
+		print('Wybrałeś kwadrat!')
+		bok = input('Podaj dlugość boku kwadratu: ')
+		bok = float(bok)
+		print('Obwód kwadratu wynosi: ', 4 * bok)
+		continue
+	if v == 3:
+		print('Wybrałeś sześcian!')
+		krawedz = input('Podaj dlugosc krawedzi bocznej: ')
+		krawedz = float(krawedz)
+		print('Pole szescianu wynosi: ', 6 * krawedz**2)
+		continue
+	if v == 4:
+		print('Wybrałeś kule!')
+		promien = input('Podaj dlugość promienia: ')
+		promien = float(promien)
+		print('Przyjmijmy, ze liczba "PI" = 3,14')
+		print('Pole kuli wynosi: ', 4 * 3.14 * promien**2)
+		continue
+	if v == 5:
+		print('Dziekujemy za skorzystanie, do zobaczenia!')
+		break
+
+#Piotr Zandecki 13954
