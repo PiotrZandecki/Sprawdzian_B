@@ -1,0 +1,45 @@
+print('Witaj! Jestem programem, który ma za zadanie sprawdzić poprawność podanych przez\nCiebie kodów EAN-8/EAN-13/NIP\n')
+while True:
+
+	print('Wybierz jaki kod chcesz podać: \n1. NIP. \n2. EAN-8.  \n3. EAN-13.')
+	print('4. Zakończ program')
+	v = (1,2,3,4)
+	v = int(input('Wybierz opcje:'))
+
+	if v == 1:
+		print('Wybrałeś NIP!')
+      NIP = input('Podaj w takim razie numer NIP')
+      NIP = float(NIP)
+
+		continue
+
+	if v == 2:
+    print('Wybrałeś EAN-8!')
+      EAN1 = input('Podaj w takim razie numer EAN-8')
+      EAN1 = float(EAN1)
+
+		continue
+
+	if v == 3:
+		print('Wybrałeś EAN-13!')
+      EAN2 = input('Podaj w takim razie numer EAN-13')
+      EAN2 = float(EAN2)
+
+		continue
+
+	if v == 4:
+		print('Dziekuję za skorzystanie, do zobaczenia!')
+		break
+#Piotr Zandecki 13954
+
+Znalazłem jedynie ogólnodostępny na stronach rządowych sposób implementacji algorytmu, który wygląda w ten sposób, ale nie do końca mam pomysł jak z niego skorzystać.
+
+
+def validate_nip(nip_str):
+  nip_str = nip_str.replace('-', '')
+  if len(nip_str) != 10 or not nip_str.isdigit(): 
+    return False
+  digits = [int(i) for i in nip_str]
+  weights = (6, 5, 7, 2, 3, 4, 5, 6, 7)
+  check_sum = sum(d * w for d, w in zip(digits, weights)) % 11
+  return check_sum == digits[9]
